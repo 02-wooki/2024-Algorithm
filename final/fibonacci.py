@@ -1,14 +1,14 @@
 import time
 
 def f(n):                   # 피보나치 수열 메모이제이션
-    if memo[n] != -1:       # 이미 계산해서 메모에 있는 경우 그대로 반환 (O(1))
-        return memo[n]
+    if dictmemo[n] != -1:       # 이미 계산해서 메모에 있는 경우 그대로 반환 (O(1))
+        return dictmemo[n]
     elif n < 2:             # 점화식
-        memo[n] = n
+        dictmemo[n] = n
         return n
     else:                   # 아직 계산되지 않은 경우 계산해서 메모에 작성하고 반환
-        memo[n] = f(n-1) + f(n-2)
-        return memo[n]
+        dictmemo[n] = f(n - 1) + f(n - 2)
+        return dictmemo[n]
 
 def f_notmemo(n):           # 깡 재귀 방법 피보나치 수열
     return n if n < 2 else f_notmemo(n-1) + f_notmemo(n-2)
@@ -21,7 +21,7 @@ def f_bottomup(n):          # 바텀업
     return dp[n]
 
 n = int(input())
-memo = [-1 for _ in range(n + 1)]
+dictmemo = [-1 for _ in range(n + 1)]
 
 start = time.time()
 print(f(n))

@@ -1,6 +1,6 @@
 def K(n, M):
     global names, profits, weights, capacity
-    nextGoods = n - 1   # 다음 물건의 인덱스
+    nextGoods = n - 1   # 판단할 물건의 인덱스
 
     # n == 0인 경우: 더 이상 (선택을 결정할) 물건이 없음
     # M == 0인 경우: 더 이상 가방에 공간이 없음
